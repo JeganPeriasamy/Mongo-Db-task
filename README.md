@@ -32,8 +32,8 @@ db.getCollection('Topics').aggregate(
         'Topic Task Data.task': 1
       }
     }
-  ],
-  {maxTimeMS: 60000, allowDiskUse: true }
+  ]
+  
 );
 ```
 
@@ -71,8 +71,7 @@ db.getCollection('Company_Drives').aggregate(
         'studentInfo.userId': 1
       }
     }
-  ],
-  { maxTimeMS: 60000, allowDiskUse: true }
+  ]
 );
 ```
 
@@ -87,8 +86,7 @@ db.getCollection('Codekata').aggregate(
         count: { $sum: '$problemSolved' }
       }
     }
-  ],
-  { maxTimeMS: 60000, allowDiskUse: true }
+  ]
 );
 ```
 
@@ -96,8 +94,8 @@ db.getCollection('Codekata').aggregate(
 
 ```bash
 db.getCollection('Mentors').aggregate(
-  [{ $match: { menteeCount: { $gt: 15 } } }],
-  { maxTimeMS: 60000, allowDiskUse: true }
+  [{ $match: { menteeCount: { $gt: 15 } } }]
+  
 );
 ```
 
@@ -144,8 +142,7 @@ db.getCollection('Attendence').aggregate(
     },
     { $project: { _id: 0, 'Absent._id': 0 } },
     { $project: { 'task-notSubmitted._id': 0 } }
-  ],
-  { maxTimeMS: 60000, allowDiskUse: true }
+  ]
 );
 ```
 
